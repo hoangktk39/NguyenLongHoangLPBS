@@ -6924,8 +6924,8 @@ function buildRankTableHTML(items, kind) {
   html += `<thead><tr><th class="rank-matrix-corner">#</th>${safeItems.map((item, idx) => `<th><span class="rank-col-badge ${rankClass}">${idx + 1}</span></th>`).join('')}</tr></thead>`;
   html += '<tbody>';
   html += `<tr class="rank-row-branch"><th>CN</th>${safeItems.map(item => `<td title="${item.branch}"><span class="rank-branch-pill">${shortBranchName(item.branch)}</span></td>`).join('')}</tr>`;
-  html += `<tr class="rank-row-total"><th>Tổng</th>${safeItems.map(item => `<td>${fmtBnDongTable(item.value, 1)}</td>`).join('')}</tr>`;
   html += `<tr class="rank-row-share"><th>Tỷ trọng</th>${safeItems.map(item => `<td>${fmtPct(item.share, 1)}</td>`).join('')}</tr>`;
+  html += `<tr class="rank-row-total"><th>Tổng</th>${safeItems.map(item => `<td>${fmtBnDongTable(item.value, 1)}</td>`).join('')}</tr>`;
   channels.forEach(c => { html += `<tr class="rank-row-channel"><th><span class="rank-channel-badge">${c}</span></th>${safeItems.map(item => `<td>${fmtBnDongTable(item.channelValues?.[c] || 0, 1)}</td>`).join('')}</tr>`; });
   html += '</tbody></table></div>'; return html;
 }
